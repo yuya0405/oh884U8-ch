@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import listfunc, detailfunc
+from .views import listfunc, detailfunc, TopicCreate
 # from .views import BoardList, BoardDetail
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('detail/<int:pk>', detailfunc, name='detail'),
     # path('list/', BoardList.as_view()),
     # path('detail/<int:pk>', BoardDetail.as_view()),
+    path('topiccreate/', TopicCreate.as_view(), name='topiccreate')
 ]

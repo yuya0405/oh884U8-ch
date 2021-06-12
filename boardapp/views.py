@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import BoardModel
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -19,3 +20,9 @@ def detailfunc(request, pk):
 # class BoardDetail(DetailView):
 #     template_name = 'detail.html'
 #     model = BoardModel #TODO: DetailModel
+
+class TopicCreate(CreateView):
+    template_name = 'topiccreate.html'
+    model = BoardModel
+    fields = ('topic', 'starter', 'description')
+    success_url = reverse_lazy('list')

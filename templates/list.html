@@ -8,6 +8,9 @@
 
 {% block content %}
 <div class="container">
+
+  <p><a href="{% url 'topiccreate' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">新しいトピックを作る</a></p>
+
   {% for item in object_list %}
   <div class="alert alert-success" role="alert">
     <p>Topic：{{ item.topic }}</p>
