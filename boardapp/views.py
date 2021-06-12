@@ -5,7 +5,8 @@ from .models import BoardModel
 # Create your views here.
 
 def listfunc(request):
-    return render(request, 'list.html', {})
+    object_list = BoardModel.objects.all()
+    return render(request, 'list.html', {'object_list':object_list})
 
 def detailfunc(request):
     return render(request, 'detail.html', {})

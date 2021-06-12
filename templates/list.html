@@ -8,13 +8,15 @@
 
 {% block content %}
 <div class="container">
+  {% for item in object_list %}
   <div class="alert alert-success" role="alert">
-    <p>Topic：</p>
-    <p>Starter：</p>
-    <p>Replies：</p>
-    <p>Views：</p>
-    <p>Last Updated：</p>
+    <p>Topic：{{ item.topic }}</p>
+    <p>Starter：{{ item.starter }}</p>
+    <p>Replies：{{ item.replies }}</p>
+    <p>Views：{{ item.views }}</p>
+    <p>Last Updated：{{ item.last_updated }}</p>
     <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細を見る</a>
   </div>
+  {% endfor %}
 </div>
 {% endblock content %}
