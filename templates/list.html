@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 
+{% block header %}
+<div class="alert alert-primary" role="alert">
+  <h1>oh884U8ちゃんねる<h1>
+</div>
+{% endblock header %}
+
 {% block content %}
-
-{{ some }}
-
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <p>Topic：</p>
+    <p>Starter：</p>
+    <p>Replies：</p>
+    <p>Views：</p>
+    <p>Last Updated：</p>
+    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細を見る</a>
+  </div>
+</div>
 {% endblock content %}

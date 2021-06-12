@@ -5,7 +5,7 @@ from .models import BoardModel
 # Create your views here.
 
 def listfunc(request):
-    return render(request, 'list.html', {'some':100})
+    return render(request, 'list.html', {})
 
 def detailfunc(request):
     return render(request, 'detail.html', {})
