@@ -12,3 +12,12 @@ class BoardModel(models.Model):
 
     def __str__(self):
         return self.topic
+
+class Post(model.Model):
+    topic = models.CharField(max_length=30)
+    user = models.CharField(max_length=10)
+    posted_date = models.DateTimeField(default=timezone.now)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.topic
