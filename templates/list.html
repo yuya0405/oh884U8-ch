@@ -24,13 +24,12 @@
     <tbody>
       {% for item in object_list %}
         <tr>
-          <td>{{ item.topic }}</td>
+          <td><a href="{% url 'detail' item.pk %}">{{ item.topic }}</a></td>
           <td>{{ item.starter }}</td>
           <td>{{ item.replies }}</td>
           <td>{{ item.views }}</td>
           <td>{{ item.last_updated }}</td>
         </tr>
-        <a href="{% url 'detail' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細を見る</a>
       {% endfor %}
     </tbody>
   </table>
