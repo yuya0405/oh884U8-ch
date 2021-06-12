@@ -4,7 +4,7 @@ from .views import listfunc, detailfunc
 
 urlpatterns = [
     path('list/', listfunc, name='list'),
-    path('detail/', detailfunc, name='detail'),
+    path('detail/<int:pk>', detailfunc, name='detail'),
     # path('list/', BoardList.as_view()),
     # path('detail/<int:pk>', BoardDetail.as_view()),
 ]

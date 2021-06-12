@@ -1,1 +1,21 @@
-bbb
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+  <h1>oh884U8ちゃんねる<h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <p>Topic：{{ object.topic }}</p>
+    <p>Starter：{{ object.starter }}</p>
+    <p>Replies：{{ object.replies }}</p>
+    <p>Views：{{ object.views }}</p>
+    <p>Last Updated：{{ object.last_updated }}</p>
+    <p>Description：{{ object.description }}</p>
+  </div>
+  <a href="{% url 'list' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">トップページに戻る</a>
+</div>
+{% endblock content %}

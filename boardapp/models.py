@@ -9,6 +9,7 @@ class BoardModel(models.Model):
     replies = models.IntegerField()
     views = models.IntegerField()
     last_updated = models.DateTimeField(default=timezone.now)
+    description = models.TextField()
 
     def __str__(self):
         return self.topic
