@@ -6,8 +6,8 @@ from django.utils import timezone
 class BoardModel(models.Model):
     topic = models.CharField(max_length=30)
     starter = models.CharField(max_length=10, default="名無し")
-    replies = models.IntegerField(null=True, blank=True)
-    views = models.IntegerField(null=True, blank=True)
+    replies = models.PositiveIntegerField(default=0)
+    views = models.PositiveIntegerField(default=0)
     last_updated = models.DateTimeField(default=timezone.now)
     description = models.TextField()
 

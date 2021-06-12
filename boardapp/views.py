@@ -11,6 +11,8 @@ def listfunc(request):
 
 def detailfunc(request, pk):
     object = get_object_or_404(BoardModel, pk=pk)
+    object.views += 1
+    object.save()
     return render(request, 'detail.html', {'object':object})
 
 # class BoardList(ListView):
