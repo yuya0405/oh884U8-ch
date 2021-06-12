@@ -11,15 +11,28 @@
 
   <p><a href="{% url 'topiccreate' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">新しいトピックを作る</a></p>
 
-  {% for item in object_list %}
-  <div class="alert alert-success" role="alert">
-    <p>Topic：{{ item.topic }}</p>
-    <p>Starter：{{ item.starter }}</p>
-    <p>Replies：{{ item.replies }}</p>
-    <p>Views：{{ item.views }}</p>
-    <p>Last Updated：{{ item.last_updated }}</p>
-    <a href="{% url 'detail' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細を見る</a>
-  </div>
-  {% endfor %}
+  <table border="1">
+    <thread>
+      <tr>
+        <th>Topic</th>
+        <th>Starter</th>
+        <th>Replies</th>
+        <th>Views</th>
+        <th>Last Updated</th>
+      </tr>
+    </thread>
+    <tbody>
+      {% for item in object_list %}
+        <tr>
+          <td>{{ item.topic }}</td>
+          <td>{{ item.starter }}</td>
+          <td>{{ item.replies }}</td>
+          <td>{{ item.views }}</td>
+          <td>{{ item.last_updated }}</td>
+        </tr>
+        <a href="{% url 'detail' item.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細を見る</a>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 {% endblock content %}
