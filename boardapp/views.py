@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView
-from .models import BoardModel
+from .models import BoardModel, PostModel
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -28,3 +28,7 @@ class TopicCreate(CreateView):
     model = BoardModel
     fields = ('topic', 'starter', 'description')
     success_url = reverse_lazy('list')
+
+def messagefunc(request, pk, message_pk):
+    post_list = get_object_or_404(PostModel, pk=pk, message_pk=message_pk)
+    return render(request, 'detail.html', {'message_list': post_list})

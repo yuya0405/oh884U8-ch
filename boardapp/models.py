@@ -14,11 +14,11 @@ class BoardModel(models.Model):
     def __str__(self):
         return self.topic
 
-class Post(models.Model):
-    topic = models.CharField(max_length=30)
+class PostModel(models.Model):
+    topic_id = models.PositiveIntegerField()
     user = models.CharField(max_length=10)
     posted_date = models.DateTimeField(default=timezone.now)
     message = models.TextField()
 
     def __str__(self):
-        return self.topic
+        return self.topic_id
