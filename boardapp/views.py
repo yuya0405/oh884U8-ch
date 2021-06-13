@@ -29,3 +29,9 @@ class TopicCreate(CreateView):
     model = BoardModel
     fields = ('topic', 'starter', 'description')
     success_url = reverse_lazy('list')
+
+class ReplyCreate(CreateView):
+    template_name = 'replycreate.html'
+    model = PostModel
+    fields = ('message',)
+    success_url = reverse_lazy('detail')

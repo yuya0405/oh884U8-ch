@@ -21,5 +21,6 @@
   {% endfor %}
 
   <a href="{% url 'list' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">トップページに戻る</a>
+  <a href="{% url 'replycreate' object.pk %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">リプライを送る</a>
 </div>
 {% endblock content %}
