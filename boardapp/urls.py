@@ -9,5 +9,5 @@ urlpatterns = [
     # path('detail/<int:pk>', BoardDetail.as_view()),
     path('topiccreate/', TopicCreate.as_view(), name='topiccreate'),
 
-    path('detail/<int:pk>/<int:message_pk>', messagefunc, name='message_func'),
+    path('detail/<int:pk>/<int:message_pk>', messagefunc, name='message'),
 ]

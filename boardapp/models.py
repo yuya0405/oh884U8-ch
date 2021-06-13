@@ -12,13 +12,13 @@ class BoardModel(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.topic
+        return str(self.topic)
 
 class PostModel(models.Model):
-    topic_id = models.PositiveIntegerField()
+    topic_id = models.PositiveIntegerField(default=1)
     user = models.CharField(max_length=10)
     posted_date = models.DateTimeField(default=timezone.now)
     message = models.TextField()
 
     def __str__(self):
-        return self.topic_id
+        return (self.message)
