@@ -13,7 +13,9 @@ def detailfunc(request, pk):
     object = get_object_or_404(BoardModel, pk=pk)
     object.views += 1
     object.save()
-    return render(request, 'detail.html', {'object':object})
+
+    post_list = PostModel.objects.all()
+    return render(request, 'detail.html', {'object':object, 'post_list':post_list})
 
 # class BoardList(ListView):
 #     template_name = 'list.html'
@@ -31,4 +33,4 @@ class TopicCreate(CreateView):
 
 def messagefunc(request, pk, message_pk):
     post_list = PostModel.objects.all()
-    return render(request, 'post.html', {'post_list':post_list})
+    return render(request, 'detail.html', {'post_list':post_list})
