@@ -30,5 +30,5 @@ class TopicCreate(CreateView):
     success_url = reverse_lazy('list')
 
 def messagefunc(request, pk, message_pk):
-    post_list = get_object_or_404(PostModel, topic_id=pk, pk=message_pk)
+    post_list = PostModel.objects.all()
     return render(request, 'post.html', {'post_list':post_list})

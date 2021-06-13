@@ -2,10 +2,12 @@
 
 {% block content %}
 <div class="container">
+  {% for post in post_list %}
   <div class="alert alert-success" role="alert">
-    <p>#{{post_list.pk}} {{post_list.posted_date}}</p>
-    <p>{{ post_list.message }}</p>
+    <p>#{{post.pk}} {{post.posted_date}}</p>
+    <p>{{ post.message }}</p>
   </div>
+  {% endfor %}
 
   <a href="{% url 'list' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">トップページに戻る</a>
 </div>
