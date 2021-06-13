@@ -5,6 +5,7 @@ Djangoで作る匿名掲示板
 ```
 pip install django
 pip install django-environ
+pip install django-widgets-improved
 ```
 
 ## 起動
