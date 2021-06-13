@@ -12,10 +12,12 @@
   </div>
 
   {% for post in post_list %}
+  {% if post.topic_id == object.id %}
   <div class="alert alert-success" role="alert">
     <p>#{{post.pk}} {{post.posted_date}}</p>
     <p>{{ post.message }}</p>
   </div>
+  {% endif %}
   {% endfor %}
 
   <a href="{% url 'list' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">トップページに戻る</a>
